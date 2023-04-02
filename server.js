@@ -1,23 +1,22 @@
-const express = require('express');
-const cors = require('cors');
-const path = require('path');
-const routes = require('./routes');
-require('dotenv').config(); // exposes process.env.CONFIG_VALUE
-const app = express();
+import express from 'express';
+import cors from 'cors';
+import path from 'path';
+import handler from './handler.js'
 
+const app = express();
 app.use(cors());
 
 /*
+const routes = require('./routes');
 app.use('/rooms', routes.rooms);
 app.use('/devices', routes.devices);
 */
 
-const appPath = path.join(__dirname, '..', 'client', 'build');
+const appPath = path.join(__dirname, 'client', 'build');
 app.use(express.static(appPath));
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(appPath, 'index.html'));
-});
+handler(app, appPath);
 
-app.listen(4000, () => {
-  console.log('NodeJS Express server listening on http://localhost:4000');
+const port = process.env.PORT;
+app.listen(port, () => {
+  console.log('NodeJS Express server listening on http://localhost:' + port);
 });

@@ -1,0 +1,24 @@
+{
+  "name": "lofwebsite",
+  "version": "1.0.0",
+  "description": "Main website for Lof",
+  "main": "server.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sgtCalamari/LofWebsite.git"
+  },
+  "author": "sgtCalamari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sgtCalamari/LofWebsite/issues"
+  },
+  "homepage": "https://github.com/sgtCalamari/LofWebsite#readme"
+}
